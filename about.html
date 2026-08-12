@@ -46,7 +46,7 @@
             height: 100vh;
             width: 100%;
             /* Placeholder for the coastal couple image */
-            background-image: url('images/img1.jpg?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('images/img13.webp?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -86,16 +86,23 @@
             font-size: 11px;
             letter-spacing: 1.5px;
             font-weight: 500;
+            position: relative;
+            z-index: 20;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            line-height: 1;
-            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            width: 190px;
+            height: 54px;
+            flex: 0 0 auto;
         }
-        .logo span {
+        .logo img {
             display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: left center;
         }
 
         .nav-links {
@@ -120,6 +127,16 @@
         }
         .menu-btn i {
             font-size: 18px;
+            transition: transform .25s ease;
+        }
+        .menu-btn.active i {
+            transform: rotate(90deg);
+        }
+        .nav-links {
+            transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+        }
+        .nav-links a {
+            display: block;
         }
 
         /* Hero Content */
@@ -389,7 +406,7 @@
             position: absolute;
             width: 80%;
             height: 80%;
-            background-image: url('images/img9.jpg');
+            background-image: url('images/img13.webp');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -494,14 +511,101 @@
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 1024px) {
-            .hero-title { font-size: 48px; }
+            nav {
+                position: relative;
+                z-index: 99990;
+            }
+            .hero-title { font-size: clamp(42px, 7vw, 58px); }
             .hero-content { padding: 0 20px 40px 20px; }
             nav { padding: 20px; }
-            .nav-links { display: none; } /* Simulating mobile nav collapse */
+
+            /* Full-screen glass mobile menu, matching the working index template */
+            .nav-links {
+                position: fixed !important;
+                top: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                inset: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                height: 100svh !important;
+                margin: 0;
+                padding: 120px 28px 90px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 22px;
+                background: rgba(8, 5, 4, .32);
+                backdrop-filter: blur(18px) saturate(120%);
+                -webkit-backdrop-filter: blur(18px) saturate(120%);
+                border: 0;
+                box-shadow: none;
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(.97);
+                transform-origin: center;
+                transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+                z-index: 99999 !important;
+                isolation: isolate;
+            }
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+            .nav-links li {
+                list-style: none;
+                width: min(300px, 86vw);
+                text-align: center;
+            }
+            .nav-links li a {
+                display: block;
+                padding: 16px 20px;
+                border: 1px solid rgba(255,255,255,.16);
+                border-radius: 999px;
+                background: rgba(255,255,255,.07);
+                box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 10px 30px rgba(0,0,0,.18);
+                color: #fff;
+                font-size: 13px;
+                letter-spacing: 3px;
+                transition: background .25s ease, border-color .25s ease, transform .25s ease;
+            }
+            .nav-links li a:hover,
+            .nav-links li a:active {
+                background: rgba(255,255,255,.14);
+                border-color: rgba(255,255,255,.35);
+                transform: translateY(-2px);
+            }
+            .menu-btn {
+                position: fixed !important;
+                top: 20px !important;
+                right: 20px !important;
+                z-index: 100000 !important;
+                background: rgba(8, 5, 4, .28);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                transition: background .25s ease, border-color .25s ease;
+            }
+            .menu-btn.active {
+                background: rgba(255,255,255,.12);
+                border-color: rgba(255,255,255,.45);
+            }
+            body.menu-open {
+                overflow: hidden;
+            }
             .cards-section { grid-template-columns: 1fr; gap: 20px; margin-top: -30px; padding: 0 20px;}
             .testimonial-section { grid-template-columns: 1fr; gap: 20px; padding: 0 20px;}
             .footer-content { flex-direction: column; gap: 15px; text-align: center; }
             .footer-links { flex-direction: column; gap: 10px; }
+        }
+
+        @media (max-width: 600px) {
+            .logo { width: 145px; height: 43px; }
+            .menu-btn { width: 42px; height: 42px; top: 14px !important; right: 14px !important; }
+            .hero-title { font-size: clamp(38px, 11vw, 52px); line-height: 1.06; }
+            .hero-content { padding: 0 18px 28px; }
         }
 		
 		
@@ -659,7 +763,7 @@ inset 0 2px 2px rgba(255,255,255,.30);
     overflow: hidden;
     background:
         linear-gradient(180deg, rgba(13,8,6,.18), rgba(13,8,6,.94)),
-        url('images/img1.jpg?q=80&w=2070&auto=format&fit=crop') center/cover;
+        url('images/img13.webp?q=80&w=2070&auto=format&fit=crop') center/cover;
 }
 .about-hero::after {
     content: "";
@@ -840,6 +944,144 @@ inset 0 2px 2px rgba(255,255,255,.30);
     .about-photo { min-height: 360px; }
 }
 
+    
+        /* FINAL MOBILE MENU FIX
+           Keeps the original template unchanged.
+           The mobile overlay is placed above every About-page layer. */
+        @media (max-width: 1024px) {
+            .about-hero {
+                overflow: visible !important;
+                position: relative !important;
+                z-index: 100000 !important;
+            }
+
+            .about-hero::after {
+                z-index: 0 !important;
+            }
+
+            .about-hero > nav {
+                position: relative !important;
+                z-index: 1000002 !important;
+            }
+
+            .about-hero .nav-links {
+                position: fixed !important;
+                inset: 0 !important;
+                top: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                width: 100vw !important;
+                height: 100dvh !important;
+                min-height: 100vh !important;
+
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 18px !important;
+
+                padding: 90px 20px !important;
+                margin: 0 !important;
+
+                background: rgba(8, 5, 4, 0.58) !important;
+                backdrop-filter: blur(28px) saturate(125%) !important;
+                -webkit-backdrop-filter: blur(28px) saturate(125%) !important;
+
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+                transform: scale(.98) !important;
+
+                z-index: 2147483000 !important;
+                isolation: isolate !important;
+
+                transition:
+                    opacity .25s ease,
+                    visibility .25s ease,
+                    transform .25s ease !important;
+            }
+
+            .about-hero .nav-links.open {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                transform: scale(1) !important;
+            }
+
+            .about-hero .nav-links li {
+                width: min(300px, 86vw) !important;
+                flex: 0 0 auto !important;
+                list-style: none !important;
+                text-align: center !important;
+            }
+
+            .about-hero .nav-links li a {
+                position: relative !important;
+                z-index: 1 !important;
+                display: block !important;
+                width: 100% !important;
+                padding: 14px 20px !important;
+                border: 1px solid rgba(255,255,255,.18) !important;
+                border-radius: 999px !important;
+                background: rgba(255,255,255,.07) !important;
+                color: #fff !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                letter-spacing: 3px !important;
+                text-align: center !important;
+                box-shadow:
+                    inset 0 1px 0 rgba(255,255,255,.12),
+                    0 12px 32px rgba(0,0,0,.22) !important;
+            }
+
+            .about-hero .nav-links li a:hover,
+            .about-hero .nav-links li a:active {
+                background: rgba(255,255,255,.14) !important;
+                border-color: rgba(255,255,255,.38) !important;
+                transform: translateY(-2px) !important;
+            }
+
+            .about-hero .menu-btn {
+                position: fixed !important;
+                top: 20px !important;
+                right: 20px !important;
+                z-index: 2147483001 !important;
+                pointer-events: auto !important;
+            }
+
+            .about-content,
+            .about-content *,
+            .about-hero + .about-content {
+                position: relative;
+            }
+
+            body.menu-open {
+                overflow: hidden !important;
+                touch-action: none !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-hero .menu-btn {
+                top: 14px !important;
+                right: 14px !important;
+            }
+
+            .about-hero .nav-links {
+                gap: 16px !important;
+                padding: 80px 18px !important;
+            }
+
+            .about-hero .nav-links li {
+                width: min(300px, 88vw) !important;
+            }
+
+            .about-hero .nav-links li a {
+                padding: 14px 18px !important;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -849,17 +1091,19 @@ inset 0 2px 2px rgba(255,255,255,.30);
 
         <section class="about-hero">
             <nav>
-                <div class="logo">
-                    United<br><span style="font-size: 12px; letter-spacing: 4px;">Photography</span>
+                <a class="logo" href="index.html" aria-label="United Photography home">
+                    <img src="images/logo.png" alt="United Photography">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="films.html">FILMS</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="menu-btn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
                 </div>
-             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="films.html">FILMS</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-                <div class="menu-btn"><i class="fas fa-bars"></i></div>
             </nav>
 
             <div class="about-hero-content">
@@ -878,26 +1122,15 @@ inset 0 2px 2px rgba(255,255,255,.30);
             <div class="about-grid">
                 <article class="about-panel">
                     <div class="pre-title">Who I Am</div>
-                    <h2>A little bit about me</h2>
-                    <p>
-                        Hello, My name is <strong style="color:#f0e6d5;">Nirban Karmakar</strong>,
-                        the owner of United Photography. I am from Kolkata, India and have
-                        been working since 2015 with my team, where we covered more than
-                        150 weddings.
-                    </p>
-                    <p>
-                        With a fly in the wall approach to our shooting, we strive to
-                        capture the most candid yet memorable moments in the hope of telling
-                        a wedding story that not only reflects the larger than life feeling
-                        of an Indian Wedding but also documents those little unseen fleeting
-                        moments that a couple and their family would experience in all their
-                        hurry and chaotic bliss.
-                    </p>
-                    <p>
-                        We hope to give them a chance to relive the day's experience in its
-                        complete glory. We also strive to make every moment of your special
-                        day memorable for you, keeping it fresh for years.
-                    </p>
+                    <h2>Hello, I’m Nirban Karmakar</h2>
+                    <p>I’m the founder of United Photography, based in Kolkata, India. Since 2015, I’ve had the privilege of documenting weddings alongside my team, capturing the stories, emotions, and beautiful chaos that make each celebration truly unique. Over the years, we’ve had the opportunity to photograph more than <strong style="color:#f0e6d5;">300+ weddings</strong>, each one leaving us with memories of our own.</p>
+                    <p>Our approach to wedding photography is simple, be present, but never intrusive.</p>
+                    <p>We believe the most beautiful photographs are often the ones that aren’t planned. A quiet glance between two people, a parent holding back tears, a burst of laughter among friends, a nervous smile before the ceremony, or a fleeting moment that lasts only a second, these are the moments we look for.</p>
+                    <p>With our fly-on-the-wall approach, we strive to capture your wedding as it naturally unfolds. Rather than directing every moment, we observe, anticipate, and document the emotions as they happen. Our aim is to tell a wedding story that captures not only the grandeur and larger-than-life celebration of an Indian wedding, but also the intimate, unseen moments that can so easily get lost in the excitement and beautiful chaos of the day.</p>
+                    <p>Because your wedding is more than just a collection of photographs. It is a story; <strong style="color:#f0e6d5;">YOUR STORY.</strong></p>
+                    <p>We want our photographs to take you back to how you felt in that moment: the excitement, the laughter, the happy tears, the nervousness, the celebrations, and all the little moments in between.</p>
+                    <p>Years from now, when the flowers have faded and the celebrations have become memories, we hope our photographs give you the chance to relive your wedding day in all its glory, exactly as it happened, and exactly as it felt.</p>
+                    <p>We don’t just photograph weddings. We preserve the feeling of them.</p>
                 </article>
 
                 <div class="about-photo">
@@ -912,7 +1145,7 @@ inset 0 2px 2px rgba(255,255,255,.30);
                     <span>Working Since</span>
                 </div>
                 <div class="about-stat">
-                    <strong>150+</strong>
+                    <strong>300+</strong>
                     <span>Weddings Covered</span>
                 </div>
                 <div class="about-stat">
@@ -945,7 +1178,7 @@ inset 0 2px 2px rgba(255,255,255,.30);
 
         <footer>
             <div class="container footer-content">
-                <div class="footer-copyright">&copy; United Photography 2026</div>
+                <div class="footer-copyright">&copy; United Photography 2015</div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms &amp; Conditions</a>
@@ -958,6 +1191,47 @@ inset 0 2px 2px rgba(255,255,255,.30);
         </footer>
 
     </main>
+
+    <script>
+    (function () {
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (!menuBtn || !navLinks) return;
+
+        function closeMenu() {
+            navLinks.classList.remove('open');
+            menuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.setAttribute('aria-label', 'Open menu');
+        }
+
+        function toggleMenu() {
+            const open = navLinks.classList.toggle('open');
+            menuBtn.classList.toggle('active', open);
+            document.body.classList.toggle('menu-open', open);
+            menuBtn.setAttribute('aria-expanded', String(open));
+            menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        menuBtn.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        navLinks.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeMenu();
+        });
+    })();
+    </script>
 
 </body>
 </html>
