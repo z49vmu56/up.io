@@ -46,7 +46,7 @@
             height: 100vh;
             width: 100%;
             /* Placeholder for the coastal couple image */
-            background-image: url('images/img1.jpg?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('images/img13.webp?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -389,7 +389,7 @@
             position: absolute;
             width: 80%;
             height: 80%;
-            background-image: url('images/img9.jpg');
+            background-image: url('images/img13.webp');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -659,7 +659,7 @@ inset 0 2px 2px rgba(255,255,255,.30);
     overflow: hidden;
     background:
         linear-gradient(180deg, rgba(13,8,6,.12), rgba(13,8,6,.96)),
-        url('images/img1.jpg?q=80&w=2070&auto=format&fit=crop') center/cover;
+        url('images/img13.webp?q=80&w=2070&auto=format&fit=crop') center/cover;
 }
 .films-hero::after {
     content: "";
@@ -947,7 +947,497 @@ inset 0 2px 2px rgba(255,255,255,.30);
     .films-wrap { margin-top: -30px; }
 }
 
-    </style>
+    
+/* ===== EXACT ABOUT TEMPLATE HEADER SYNC ===== */
+nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 30px 40px !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 500 !important;
+    position: relative !important;
+    z-index: 99990 !important;
+    box-sizing: border-box !important;
+}
+
+.logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: 190px !important;
+    height: 54px !important;
+    flex: 0 0 auto !important;
+    line-height: 0 !important;
+}
+
+.logo img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+}
+
+.nav-links {
+    list-style: none !important;
+    display: flex !important;
+    gap: 40px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menu-btn {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255,255,255,.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+.menu-btn i {
+    font-size: 18px !important;
+    transition: transform .25s ease !important;
+}
+
+.menu-btn.active i {
+    transform: rotate(90deg) !important;
+}
+
+body.menu-open {
+    overflow: hidden !important;
+}
+
+/* Exact About mobile menu */
+@media (max-width: 1024px) {
+    nav {
+        padding: 20px !important;
+        position: relative !important;
+        z-index: 2147483001 !important;
+    }
+
+    .logo {
+        width: 145px !important;
+        height: 43px !important;
+    }
+
+    .nav-links {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 16px !important;
+        padding: 80px 18px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        background: rgba(8,5,4,.58) !important;
+        backdrop-filter: blur(28px) saturate(125%) !important;
+        -webkit-backdrop-filter: blur(28px) saturate(125%) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: scale(.98) !important;
+        z-index: 2147483000 !important;
+        isolation: isolate !important;
+        transition: opacity .25s ease, visibility .25s ease, transform .25s ease !important;
+    }
+
+    .nav-links.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: scale(1) !important;
+    }
+
+    .nav-links li {
+        width: min(300px, 88vw) !important;
+        flex: 0 0 auto !important;
+        list-style: none !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .nav-links li a {
+        position: relative !important;
+        z-index: 1 !important;
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 14px 18px !important;
+        border: 1px solid rgba(255,255,255,.18) !important;
+        border-radius: 999px !important;
+        background: rgba(255,255,255,.07) !important;
+        color: #fff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        letter-spacing: 3px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.12),
+            0 12px 32px rgba(0,0,0,.22) !important;
+        transition: background .25s ease, border-color .25s ease, transform .25s ease !important;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:active {
+        background: rgba(255,255,255,.14) !important;
+        border-color: rgba(255,255,255,.38) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .menu-btn {
+        position: fixed !important;
+        top: 14px !important;
+        right: 14px !important;
+        z-index: 2147483001 !important;
+        width: 42px !important;
+        height: 42px !important;
+        flex: 0 0 42px !important;
+        background: rgba(8,5,4,.28) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .nav-links {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE MENU = EXACT REFERENCE FROM index(8).html
+   ========================================================= */
+@media (max-width: 1024px) {
+    nav {
+        position: relative !important;
+        z-index: 2147483000 !important;
+        isolation: isolate !important;
+        padding: 20px !important;
+    }
+
+    .logo {
+        width: 145px !important;
+        height: 43px !important;
+    }
+
+    .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100svh !important;
+        margin: 0 !important;
+        padding: 120px 28px 90px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 22px !important;
+        background: rgba(8, 5, 4, .82) !important;
+        backdrop-filter: blur(22px) saturate(120%) !important;
+        -webkit-backdrop-filter: blur(22px) saturate(120%) !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: scale(.97) !important;
+        transform-origin: center !important;
+        transition: opacity .3s ease, visibility .3s ease, transform .3s ease !important;
+        z-index: 2147483646 !important;
+        isolation: isolate !important;
+        pointer-events: none !important;
+    }
+
+    .nav-links.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(1) !important;
+        pointer-events: auto !important;
+    }
+
+    .nav-links li {
+        position: relative !important;
+        z-index: 2 !important;
+        list-style: none !important;
+        width: min(300px, 86vw) !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .nav-links li a {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 16px 20px !important;
+        border: 1px solid rgba(255,255,255,.16) !important;
+        border-radius: 999px !important;
+        background: rgba(255,255,255,.07) !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 10px 30px rgba(0,0,0,.18) !important;
+        color: #fff !important;
+        font-size: 13px !important;
+        letter-spacing: 3px !important;
+        line-height: normal !important;
+        text-align: center !important;
+        transition: background .25s ease, border-color .25s ease, transform .25s ease !important;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:active {
+        background: rgba(255,255,255,.14) !important;
+        border-color: rgba(255,255,255,.35) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .menu-btn {
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 2147483647 !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: rgba(8, 5, 4, .28) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        transition: background .25s ease, border-color .25s ease !important;
+    }
+
+    .menu-btn.active {
+        background: rgba(255,255,255,.12) !important;
+        border-color: rgba(255,255,255,.45) !important;
+    }
+
+    body.menu-open {
+        overflow: hidden !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 145px !important;
+        height: 43px !important;
+    }
+
+    .menu-btn {
+        width: 42px !important;
+        height: 42px !important;
+        top: 14px !important;
+        right: 14px !important;
+    }
+}
+
+
+/* ===== FINAL: EXACT index(8).html MOBILE MENU ===== */
+nav {
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+    padding:30px 40px !important;
+    font-size:11px !important;
+    letter-spacing:1.5px !important;
+    font-weight:500 !important;
+    position:relative !important;
+    z-index:20 !important;
+}
+
+.logo {
+    display:inline-flex !important;
+    align-items:center !important;
+    width:190px !important;
+    height:54px !important;
+    flex:0 0 auto !important;
+    line-height:0 !important;
+}
+
+.logo img {
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:left center !important;
+}
+
+.nav-links {
+    list-style:none !important;
+    display:flex !important;
+    gap:40px !important;
+    margin:0 !important;
+    padding:0 !important;
+    transition:opacity .25s ease, visibility .25s ease, transform .25s ease !important;
+}
+
+.nav-links a {
+    display:block !important;
+}
+
+.menu-btn {
+    width:40px !important;
+    height:40px !important;
+    border-radius:50% !important;
+    border:1px solid rgba(255,255,255,.3) !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    cursor:pointer !important;
+}
+
+.menu-btn i {
+    font-size:18px !important;
+    transition:transform .25s ease !important;
+}
+
+.menu-btn.active i {
+    transform:rotate(90deg) !important;
+}
+
+@media (max-width:1024px) {
+    nav {
+        padding:20px !important;
+        position:relative !important;
+        z-index:2147483000 !important;
+        isolation:isolate !important;
+    }
+
+    .logo {
+        width:145px !important;
+        height:43px !important;
+    }
+
+    .nav-links {
+        position:fixed !important;
+        top:0 !important;
+        right:0 !important;
+        bottom:0 !important;
+        left:0 !important;
+        inset:0 !important;
+        width:100vw !important;
+        height:100vh !important;
+        height:100svh !important;
+        margin:0 !important;
+        padding:120px 28px 90px !important;
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        justify-content:center !important;
+        gap:22px !important;
+        background:rgba(8,5,4,.82) !important;
+        backdrop-filter:blur(22px) saturate(120%) !important;
+        -webkit-backdrop-filter:blur(22px) saturate(120%) !important;
+        overflow-y:auto !important;
+        overscroll-behavior:contain !important;
+        border:0 !important;
+        box-shadow:none !important;
+        opacity:0 !important;
+        visibility:hidden !important;
+        transform:scale(.97) !important;
+        transform-origin:center !important;
+        transition:opacity .3s ease, visibility .3s ease, transform .3s ease !important;
+        z-index:2147483646 !important;
+        isolation:isolate !important;
+        pointer-events:none !important;
+    }
+
+    .nav-links.open {
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:scale(1) !important;
+        pointer-events:auto !important;
+    }
+
+    .nav-links li {
+        position:relative !important;
+        z-index:2 !important;
+        list-style:none !important;
+        width:min(300px,86vw) !important;
+        text-align:center !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    .nav-links li a {
+        display:block !important;
+        width:100% !important;
+        box-sizing:border-box !important;
+        padding:16px 20px !important;
+        border:1px solid rgba(255,255,255,.16) !important;
+        border-radius:999px !important;
+        background:rgba(255,255,255,.07) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 10px 30px rgba(0,0,0,.18) !important;
+        color:#fff !important;
+        font-size:13px !important;
+        letter-spacing:3px !important;
+        line-height:normal !important;
+        transition:background .25s ease, border-color .25s ease, transform .25s ease !important;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:active {
+        background:rgba(255,255,255,.14) !important;
+        border-color:rgba(255,255,255,.35) !important;
+        transform:translateY(-2px) !important;
+    }
+
+    .menu-btn {
+        position:fixed !important;
+        top:20px !important;
+        right:20px !important;
+        z-index:2147483647 !important;
+        background:rgba(8,5,4,.28) !important;
+        backdrop-filter:blur(10px) !important;
+        -webkit-backdrop-filter:blur(10px) !important;
+        transition:background .25s ease, border-color .25s ease !important;
+    }
+
+    .menu-btn.active {
+        background:rgba(255,255,255,.12) !important;
+        border-color:rgba(255,255,255,.45) !important;
+    }
+
+    body.menu-open {
+        overflow:hidden !important;
+    }
+}
+
+@media (max-width:600px) {
+    .logo {
+        width:145px !important;
+        height:43px !important;
+    }
+
+    .menu-btn {
+        width:42px !important;
+        height:42px !important;
+        top:14px !important;
+        right:14px !important;
+    }
+}
+
+</style>
 </head>
 <body>
 
@@ -956,17 +1446,19 @@ inset 0 2px 2px rgba(255,255,255,.30);
 
         <section class="films-hero">
             <nav>
-                <div class="logo">
-                    United<br><span style="font-size: 12px; letter-spacing: 4px;">Photography</span>
-                </div>
+                <a class="logo" href="index.html" aria-label="United Photography home">
+                    <img src="images/logo.png" alt="United Photography">
+                </a>
                 <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="films.html">FILMS</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-                <div class="menu-btn"><i class="fas fa-bars"></i></div>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="films.html">FILMS</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="menu-btn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
 
             <div class="films-hero-content">
@@ -985,25 +1477,23 @@ inset 0 2px 2px rgba(255,255,255,.30);
         <section class="container films-wrap">
 
             <article class="featured-film">
-                <img src="images/img2.jpg?q=85&w=1800&auto=format&fit=crop"
-                     alt="Featured United Photography wedding film"
-                     loading="lazy">
+                <img src="https://i.ytimg.com/vi/ACnDUJjjFjI/maxresdefault.jpg"
+                     alt="Jhonny & Manisha - United Photography wedding film"
+                     loading="lazy"
+                     onerror="this.src='https://i.ytimg.com/vi/ACnDUJjjFjI/hqdefault.jpg';">
 
                 <div class="featured-content">
                     <div class="featured-copy">
-                        <div class="featured-label">Featured Wedding Film · Kolkata</div>
-                        <a href="#" class="play-button" aria-label="Play featured wedding film">
+                        <div class="featured-label">Featured Wedding Film · United Photography</div>
+                        <a href="https://www.youtube.com/watch?v=ACnDUJjjFjI" target="_blank" rel="noopener noreferrer"
+                           class="play-button" aria-label="Watch Jhonny & Manisha wedding film on YouTube">
                             <i class="fas fa-play"></i>
                         </a>
-                        <h2>The day. The people. The feeling.</h2>
-                        <p>
-                            A cinematic wedding story built around real emotions and
-                            naturally unfolding moments. Press play and experience the
-                            celebration beyond the photographs.
-                        </p>
-                        <a href="#" class="btn-glass">
-                            WATCH FILM
-                            <i class="fas fa-arrow-right"></i>
+                        <h2>Jhonny & Manisha</h2>
+                        <p>A premium Christian wedding story captured with cinematic detail and emotion.</p>
+                        <a href="https://www.youtube.com/watch?v=ACnDUJjjFjI" target="_blank" rel="noopener noreferrer" class="btn-glass">
+                            WATCH ON YOUTUBE
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
@@ -1015,22 +1505,132 @@ inset 0 2px 2px rgba(255,255,255,.30);
                     <h2>Watch the stories.</h2>
                 </div>
                 <p>
-                    A selection of cinematic wedding stories, intimate moments and
-                    celebrations captured by United Photography.
+                    A selection of wedding films and trailers from the official United Photography YouTube channel,
+                    featuring real celebrations, couples, families and the moments in between.
                 </p>
             </div>
 
             <div class="film-grid">
                 <article class="film-card">
-                    <img src="images/img3.jpg?q=85&w=1200&auto=format&fit=crop"
-                         alt="Indian wedding film by United Photography" loading="lazy">
-                    <a href="#" class="film-card-play" aria-label="Play wedding film">
+                    <img src="https://i.ytimg.com/vi/y15_MO83sNI/maxresdefault.jpg"
+                         alt="Samik & Mou - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/y15_MO83sNI/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=y15_MO83sNI" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch Samik & Mou on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>Samik & Mou</h3>
+                        <span>Pre-Wedding · Cinematic Story</span>
+                    </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/aqTy0QF6I8M/maxresdefault.jpg"
+                         alt="Danish & Sara - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/aqTy0QF6I8M/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=aqTy0QF6I8M" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch Danish & Sara on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>Danish & Sara</h3>
+                        <span>Muslim Wedding · Wedding Teaser</span>
+                    </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/JEfi2E3qkFQ/maxresdefault.jpg"
+                         alt="Shreshta & Kunal - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/JEfi2E3qkFQ/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=JEfi2E3qkFQ" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch Shreshta & Kunal on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>Shreshta & Kunal</h3>
+                        <span>Bengali Wedding · Wedding Trailer</span>
+                    </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/SUipepSvfsc/maxresdefault.jpg"
+                         alt="The Celebration - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/SUipepSvfsc/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=SUipepSvfsc" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch The Celebration on YouTube">
                         <i class="fas fa-play"></i>
                     </a>
                     <div class="film-card-content">
                         <h3>The Celebration</h3>
-                        <span>Indian Wedding · Kolkata</span>
+                        <span>Wedding Film · United Photography</span>
                     </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/7x9guIsFy48/maxresdefault.jpg"
+                         alt="The Couple - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/7x9guIsFy48/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=7x9guIsFy48" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch The Couple on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>The Couple</h3>
+                        <span>Couple Story · Cinematic Wedding</span>
+                    </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/bzEzv-9ibwY/maxresdefault.jpg"
+                         alt="The Wedding Story - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/bzEzv-9ibwY/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=bzEzv-9ibwY" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch The Wedding Story on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>The Wedding Story</h3>
+                        <span>Indian Wedding · Documentary</span>
+                    </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/yRFzrZK_laE/maxresdefault.jpg"
+                         alt="Moments That Matter - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/yRFzrZK_laE/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=yRFzrZK_laE" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch Moments That Matter on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>Moments That Matter</h3>
+                        <span>Wedding Film · Real Moments</span>
+                    </div>
+                </article>
+
+                <article class="film-card">
+                    <img src="https://i.ytimg.com/vi/QK5YWrsmoZM/maxresdefault.jpg"
+                         alt="The Memories - United Photography"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/QK5YWrsmoZM/hqdefault.jpg';">
+                    <a href="https://www.youtube.com/watch?v=QK5YWrsmoZM" target="_blank" rel="noopener noreferrer"
+                       class="film-card-play" aria-label="Watch The Memories on YouTube">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="film-card-content">
+                        <h3>The Memories</h3>
+                        <span>Wedding Film · United Photography</span>
+                    </div>
+                </article>
+            </div>
                 </article>
 
                 <article class="film-card">
@@ -1116,15 +1716,15 @@ inset 0 2px 2px rgba(255,255,255,.30);
         <section class="films-cta">
             <h2>Your story deserves a film.</h2>
             <p>United Photography · Kolkata, India · Wedding Photography & Filmmaking</p>
-            <a href="#" class="btn-glass" style="margin:0 auto;">
-                LET'S CREATE YOUR FILM
+            <a href="https://www.youtube.com/@unitedphotography3619" target="_blank" rel="noopener noreferrer" class="btn-glass" style="margin:0 auto;">
+                VIEW YOUTUBE CHANNEL
                 <i class="fas fa-arrow-right"></i>
             </a>
         </section>
 
         <footer>
             <div class="container footer-content">
-                <div class="footer-copyright">&copy; United Photography 2026</div>
+                <div class="footer-copyright">&copy; United Photography 2015</div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms &amp; Conditions</a>
@@ -1138,5 +1738,50 @@ inset 0 2px 2px rgba(255,255,255,.30);
 
     </main>
 
+<script>
+(function () {
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (!menuBtn || !navLinks) return;
+
+    menuBtn.setAttribute('role', 'button');
+    menuBtn.setAttribute('tabindex', '0');
+    menuBtn.setAttribute('aria-label', 'Open menu');
+    menuBtn.setAttribute('aria-expanded', 'false');
+
+    function closeMenu() {
+        navLinks.classList.remove('open');
+        menuBtn.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open menu');
+    }
+
+    function toggleMenu() {
+        const open = navLinks.classList.toggle('open');
+        menuBtn.classList.toggle('active', open);
+        document.body.classList.toggle('menu-open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    menuBtn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMenu();
+        }
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+    });
+})();
+</script>
 </body>
 </html>
