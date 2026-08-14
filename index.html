@@ -46,7 +46,7 @@
             height: 100vh;
             width: 100%;
             /* Placeholder for the coastal couple image */
-            background-image: url('images/img13.webp?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('images/img18.webp?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -468,6 +468,109 @@
             filter: grayscale(0%) brightness(1);
         }
 
+
+        /* --- Social Media Panel --- */
+        .social-panel {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            position: relative;
+        }
+
+        .social-header {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .social-main-icon {
+            font-size: 25px;
+            margin-bottom: 11px;
+            color: #f0e6d5;
+        }
+
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin-bottom: 7px;
+        }
+
+        .social-subtitle {
+            font-size: 9px;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.42);
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .social-link {
+            min-height: 54px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 9px;
+            background: rgba(255,255,255,.025);
+            transition: .3s ease;
+        }
+
+        .social-link i {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,.07);
+            font-size: 13px;
+            flex: 0 0 30px;
+        }
+
+        .social-link span {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
+        }
+
+        .social-link strong {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .social-link small {
+            font-size: 8px;
+            color: rgba(255,255,255,.42);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .social-link:hover {
+            border-color: rgba(255,255,255,.25);
+            background: rgba(255,255,255,.07);
+            transform: translateY(-2px);
+        }
+
+        .social-link.full {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 600px) {
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            .social-link.full {
+                grid-column: auto;
+            }
+        }
+
         /* --- Footer --- */
         footer {
             padding: 25px 0;
@@ -617,12 +720,21 @@
         }
 
         @media (max-width: 600px) {
+            /* Mobile hero: keep the main photograph visually centred */
+            .hero {
+                min-height: 100svh;
+                height: 100svh;
+                background-size: cover;
+                background-position: 50% center !important;
+                background-attachment: scroll;
+            }
+
             .logo { width: 145px; height: 43px; }
             .menu-btn { width: 42px; height: 42px; top: 14px !important; right: 14px !important; }
             .hero {
                 min-height: 100svh;
                 height: 100svh;
-                background-position: 58% center;
+                background-position: 50% center !important;
             }
             .hero-content {
                 padding: 0 18px 28px;
@@ -776,7 +888,19 @@ inset 0 2px 2px rgba(255,255,255,.30);
 }
 
 
-    </style>
+    
+/* Final mobile hero crop: centre the photographed subject, not just the image canvas */
+@media (max-width: 600px) {
+    .hero {
+        min-height: 100svh !important;
+        height: 100svh !important;
+        background-size: cover !important;
+        background-position: 80% 50% !important;
+        background-attachment: scroll !important;
+    }
+}
+
+</style>
 </head>
 <body>
 
@@ -790,6 +914,7 @@ inset 0 2px 2px rgba(255,255,255,.30);
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="films.html">FILMS</a></li>
                 <li><a href="portfolio.html">PORTFOLIO</a></li>
+				<li><a href="reviews.html">REVIEWS</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
@@ -797,6 +922,7 @@ inset 0 2px 2px rgba(255,255,255,.30);
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
+		
 
         <div class="hero-content">
             <div class="hero-left">
@@ -877,20 +1003,50 @@ inset 0 2px 2px rgba(255,255,255,.30);
             </div>
         </div>
 
-        <!-- Instagram Block -->
-        <div class="testimonial-box ig-block">
-            <div class="ig-header">
-                <i class="fab fa-instagram ig-icon"></i>
-                <div class="ig-text">
-                    Follow Along<br>@unitedphotography2019
-                </div>
+        <!-- Social Media Panel -->
+        <div class="testimonial-box social-panel">
+            <div class="social-header">
+                <i class="fas fa-share-nodes social-main-icon"></i>
+                <div class="social-title">Stay Connected</div>
+                <div class="social-subtitle">United Photography · Social & Contact</div>
             </div>
-            <div class="ig-grid">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=200&auto=format&fit=crop" alt="IG 1">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=200&auto=format&fit=crop" alt="IG 2">
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=200&auto=format&fit=crop" alt="IG 3">
+
+            <div class="social-links">
+                <a class="social-link" href="https://www.facebook.com/profile.php?id=100064025112938" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>
+                        <strong>Facebook</strong>
+                        <small>Follow our work</small>
+                    </span>
+                </a>
+
+                <a class="social-link" href="https://www.instagram.com/unitedphotography2019" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                    <span>
+                        <strong>Instagram</strong>
+                        <small>@unitedphotography2019</small>
+                    </span>
+                </a>
+
+                <a class="social-link" href="https://www.youtube.com/@unitedphotography3619/videos" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube"></i>
+                    <span>
+                        <strong>YouTube</strong>
+                        <small>Films & wedding stories</small>
+                    </span>
+                </a>
+
+
+                <a class="social-link" href="mailto:unitedphotography19@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <span>
+                        <strong>Email</strong>
+                        <small>unitedphotography19@gmail.com</small>
+                    </span>
+                </a>
             </div>
         </div>
+
     </section>
 
     <!-- Footer -->
